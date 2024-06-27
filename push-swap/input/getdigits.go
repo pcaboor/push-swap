@@ -29,4 +29,5 @@ func GetDigits() {
 		}
 		cmds.Stacks.A = append(cmds.Stacks.A, convertedDigits)
 	}
+	CheckDuplicates()
 }
