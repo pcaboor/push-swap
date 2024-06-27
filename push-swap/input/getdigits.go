@@ -9,6 +9,7 @@ import (
 
 // Fill stack "a" with digits from first argument.
 func GetDigits() {
+	CheckArgs()
 	toConvert := ""
 	for _, digit := range os.Args[1] {
 		if digit >= '0' && digit <= '9' {
