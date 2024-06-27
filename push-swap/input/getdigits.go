@@ -1,16 +1,11 @@
 package input
 
 import (
+	"cmds"
 	"fmt"
 	"os"
 	"strconv"
 )
-
-type StacksObject struct {
-	A, B []int
-}
-
-var Stacks StacksObject
 
 // Fill stack "a" with digits from first argument.
 func GetDigits() {
@@ -23,7 +18,7 @@ func GetDigits() {
 			if err != nil {
 				fmt.Println(err)
 			}
-			Stacks.A = append(Stacks.A, convertedDigits)
+			cmds.Stacks.A = append(cmds.Stacks.A, convertedDigits)
 			toConvert = ""
 		}
 	}
@@ -32,6 +27,6 @@ func GetDigits() {
 		if err != nil {
 			fmt.Println(err)
 		}
-		Stacks.A = append(Stacks.A, convertedDigits)
+		cmds.Stacks.A = append(cmds.Stacks.A, convertedDigits)
 	}
 }

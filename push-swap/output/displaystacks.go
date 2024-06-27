@@ -1,32 +1,32 @@
 package output
 
 import (
+	"cmds"
 	"fmt"
-	"input"
 )
 
 // Display both stacks.
 func DisplayStacks() {
 	cA, cB := 0, 0
 	linesSize := 0
-	if len(input.Stacks.A) >= len(input.Stacks.B) {
-		linesSize = len(input.Stacks.A)
+	if len(cmds.Stacks.A) >= len(cmds.Stacks.B) {
+		linesSize = len(cmds.Stacks.A)
 	} else {
-		linesSize = len(input.Stacks.B)
+		linesSize = len(cmds.Stacks.B)
 	}
 	for i := 0; i < linesSize; i++ {
-		if len(input.Stacks.A) < linesSize-i {
+		if len(cmds.Stacks.A) < linesSize-i {
 			fmt.Print(".")
 			cA++
 		} else {
-			fmt.Print(input.Stacks.A[i-cA])
+			fmt.Print(cmds.Stacks.A[i-cA])
 		}
 		fmt.Print("\t|\t")
-		if len(input.Stacks.B) < linesSize-i {
+		if len(cmds.Stacks.B) < linesSize-i {
 			fmt.Print(".")
 			cB++
 		} else {
-			fmt.Print(input.Stacks.B[i-cB])
+			fmt.Print(cmds.Stacks.B[i-cB])
 		}
 		fmt.Println()
 	}
