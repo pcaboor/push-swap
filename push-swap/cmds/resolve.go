@@ -42,7 +42,7 @@ func Resolve() {
 	// Create a reference ordered to know the final state we need.
 	OrderReference()
 	c := 1
-	for !isSorted() && c < 30 {
+	for !isSorted() {
 		// Show evolution of ints in stacks.
 		DisplayResolve()
 		//Check if we can use Rra
@@ -104,14 +104,20 @@ func Resolve() {
 			continue
 		}
 		//Check if we can use Pb.
+		executed := false
 		for i := 0; i+1 < len(Stacks.A); i++ {
 			if Stacks.A[i] > Stacks.A[i+1] {
 				Stacks.Pb()
 				fmt.Print(c)
 				fmt.Println(" - pb")
 				c++
+				executed = true
 				break
 			}
+		}
+
+		if executed {
+			continue
 		}
 		//Check if we can use Pa.
 		if len(Stacks.B) > 0 {
