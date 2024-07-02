@@ -44,7 +44,7 @@ func Resolve() {
 	c := 1
 	for !isSorted() {
 		// Show evolution of ints in stacks.
-		DisplayResolve()
+		//DisplayResolve()
 		//Check if we can use Rra
 		if len(Stacks.A) > 2 {
 			doRra := true
@@ -56,8 +56,8 @@ func Resolve() {
 			}
 			if doRra {
 				Stacks.Rra()
-				fmt.Print(c)
-				fmt.Println(" - rra")
+				//fmt.Print(c)
+				fmt.Println("rra")
 				c++
 				continue
 			}
@@ -73,8 +73,8 @@ func Resolve() {
 			}
 			if doRa {
 				Stacks.Ra()
-				fmt.Print(c)
-				fmt.Println(" - ra")
+				//fmt.Print(c)
+				fmt.Println("ra")
 				c++
 				continue
 			}
@@ -82,24 +82,24 @@ func Resolve() {
 		// Check if we can use Ss.
 		if len(Stacks.A) > 1 && len(Stacks.B) > 1 && Stacks.A[0] > Stacks.A[1] && Stacks.B[0] < Stacks.B[1] {
 			Stacks.Ss()
-			fmt.Print(c)
-			fmt.Println(" - ss")
+			//fmt.Print(c)
+			fmt.Println("ss")
 			c++
 			continue
 		}
 		// Check if we can use Sa.
 		if len(Stacks.A) > 1 && Stacks.A[0] > Stacks.A[1] {
 			Stacks.Sa()
-			fmt.Print(c)
-			fmt.Println(" - sa")
+			//fmt.Print(c)
+			fmt.Println("sa")
 			c++
 			continue
 		}
 		// Check if we can use Sb.
 		if len(Stacks.B) > 1 && Stacks.B[0] < Stacks.B[1] {
 			Stacks.Sb()
-			fmt.Print(c)
-			fmt.Println(" - sb")
+			//fmt.Print(c)
+			fmt.Println("sb")
 			c++
 			continue
 		}
@@ -108,8 +108,8 @@ func Resolve() {
 		for i := 0; i+1 < len(Stacks.A); i++ {
 			if Stacks.A[i] > Stacks.A[i+1] {
 				Stacks.Pb()
-				fmt.Print(c)
-				fmt.Println(" - pb")
+				//fmt.Print(c)
+				fmt.Println("pb")
 				c++
 				executed = true
 				break
@@ -123,8 +123,8 @@ func Resolve() {
 		if len(Stacks.B) > 0 {
 			if areBothSorted() {
 				Stacks.Pa()
-				fmt.Print(c)
-				fmt.Println(" - pa")
+				//fmt.Print(c)
+				fmt.Println("pa")
 				c++
 				continue
 			}
@@ -133,8 +133,8 @@ func Resolve() {
 		if len(Stacks.B) > 2 && !isBSorted() {
 			if Stacks.B[len(Stacks.B)-1] < Stacks.B[0] {
 				Stacks.Rb()
-				fmt.Print(c)
-				fmt.Println(" - rb")
+				//fmt.Print(c)
+				fmt.Println("rb")
 				c++
 				continue
 			}
@@ -143,8 +143,8 @@ func Resolve() {
 		if len(Stacks.B) > 2 {
 			if Stacks.B[len(Stacks.B)-1] > Stacks.B[0] {
 				Stacks.Rrb()
-				fmt.Print(c)
-				fmt.Println(" - rrb")
+				//fmt.Print(c)
+				fmt.Println("rrb")
 				c++
 				continue
 			}
